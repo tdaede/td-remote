@@ -1,0 +1,17 @@
+[package]
+name = "td-remote-firmware"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+bitvec = { version = "1.0.1", default-features = false }
+cortex-m-rt = "^0.6.0"
+lpc8xx-hal = { version = "0.9.0", features = ["822m101jdh20", "cortex-m-rt", "82x-rt"] }
+panic-halt = "0.2.0"
+
+[profile.release]
+codegen-units = 1
+debug = true
+lto = true
