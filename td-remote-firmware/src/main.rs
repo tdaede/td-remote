@@ -198,10 +198,6 @@ fn main() -> ! {
             row3.set_low();
             row4.set_low();
             row5.set_low();
-            // only for edge triggered interrupt
-            //unsafe {
-            //    pinint.ist.write(|w| w.pstat().bits(0b00001111));
-            //}
             NVIC::unpend(Interrupt::PIN_INT0);
             NVIC::unpend(Interrupt::PIN_INT1);
             NVIC::unpend(Interrupt::PIN_INT2);
